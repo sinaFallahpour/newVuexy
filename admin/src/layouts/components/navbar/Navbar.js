@@ -33,6 +33,7 @@ const ThemeNavbar = props => {
   const { user } = useAuth0()
   const colorsArr = [ "primary", "danger", "success", "info", "warning", "dark"]
   const navbarTypes = ["floating" , "static" , "sticky" , "hidden"]
+
   return (
     <React.Fragment>
       <div className="content-overlay" />

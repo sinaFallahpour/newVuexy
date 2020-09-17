@@ -627,17 +627,8 @@ const navigationConfig = [
     navLink: "/pages/account-settings"
   },
   {
-    id: "faq",
-    title: "FAQ",
-    type: "item",
-    icon: <Icon.HelpCircle size={20} />,
-    permissions: ["admin", "editor"],
-    navLink: "/pages/faq"
-  },
-
-  {
     id: "knowledgeBase",
-    title: "Knowledge Base",
+    title: " اکتیو برای جنتا روت",
     type: "item",
     icon: <Icon.Info size={20} />,
     permissions: ["admin", "editor"],
@@ -655,16 +646,6 @@ const navigationConfig = [
     permissions: ["admin", "editor"],
     navLink: "/pages/search"
   },
-
-  {
-    id: "invoice",
-    title: "Invoice",
-    type: "item",
-    icon: <Icon.File size={20} />,
-    permissions: ["admin", "editor"],
-    navLink: "/pages/invoice"
-  },
-
   {
     id: "authentication",
     title: "Authentication",

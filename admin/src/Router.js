@@ -135,7 +135,7 @@ const ReactTables = lazy(() =>
 const Aggrid = lazy(() => import("./views/tables/aggrid/Aggrid"));
 const DataTable = lazy(() => import("./views/tables/data-tables/DataTables"));
 const profile = lazy(() => import("./views/pages/profile/Profile"));
-const faq = lazy(() => import("./views/pages/faq/FAQ"));
+
 const knowledgeBase = lazy(() =>
   import("./views/pages/knowledge-base/KnowledgeBase")
 );
@@ -143,7 +143,7 @@ const search = lazy(() => import("./views/pages/search/Search"));
 const accountSettings = lazy(() =>
   import("./views/pages/account-settings/AccountSettings")
 );
-const invoice = lazy(() => import("./views/pages/invoice/Invoice"));
+
 const comingSoon = lazy(() => import("./views/pages/misc/ComingSoon"));
 const error404 = lazy(() => import("./views/pages/misc/error/404"));
 const error500 = lazy(() => import("./views/pages/misc/error/500"));
@@ -320,7 +320,7 @@ class AppRouter extends React.Component {
           <AppRoute path="/tables/agGrid" component={Aggrid} />
           <AppRoute path="/tables/data-tables" component={DataTable} />
           <AppRoute path="/pages/profile" component={profile} />
-          <AppRoute path="/pages/faq" component={faq} />
+
           <AppRoute path="/pages/knowledge-base" exact />
           <AppRoute
             path="/pages/knowledge-base/category"
@@ -336,7 +336,7 @@ class AppRouter extends React.Component {
             path="/pages/account-settings"
             component={accountSettings}
           />
-          <AppRoute path="/pages/invoice" component={invoice} />
+           
           <AppRoute
             path="/misc/coming-soon"
             component={comingSoon}
