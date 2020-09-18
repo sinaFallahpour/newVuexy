@@ -9,6 +9,8 @@ import knowledgeBaseQuestion from "./views/pages/knowledge-base/Questions";
 import { ContextLayout } from "./utility/context/Layout";
 
 // Route-based code splitting
+const categories = lazy(() => import("./views/Categories/List/Categories"));
+
 const analyticsDashboard = lazy(() =>
   import("./views/dashboard/analytics/AnalyticsDashboard")
 );
@@ -229,6 +231,7 @@ class AppRouter extends React.Component {
       // Set the directory path if you are deploying in sub-folder
       <Router history={history}>
         <Switch>
+          <AppRoute exact path="/categories" component={categories} />
           <AppRoute exact path="/" component={analyticsDashboard} />
           <AppRoute
             path="/ecommerce-dashboard"
@@ -247,12 +250,10 @@ class AppRouter extends React.Component {
           />
           <AppRoute path="/todo/:filter" component={todo} />
           <AppRoute path="/calendar" component={calendar} />
-
           <AppRoute
             path="/ecommerce/product-detail"
             component={productDetail}
           />
-        
           <AppRoute path="/data-list/list-view" component={listView} />
           <AppRoute path="/data-list/thumb-view" component={thumbView} />
           <AppRoute path="/ui-element/grid" component={grid} />
@@ -320,7 +321,6 @@ class AppRouter extends React.Component {
           <AppRoute path="/tables/agGrid" component={Aggrid} />
           <AppRoute path="/tables/data-tables" component={DataTable} />
           <AppRoute path="/pages/profile" component={profile} />
-
           <AppRoute path="/pages/knowledge-base" exact />
           <AppRoute
             path="/pages/knowledge-base/category"
@@ -336,7 +336,6 @@ class AppRouter extends React.Component {
             path="/pages/account-settings"
             component={accountSettings}
           />
-           
           <AppRoute
             path="/misc/coming-soon"
             component={comingSoon}
@@ -388,12 +387,12 @@ class AppRouter extends React.Component {
           <AppRoute path="/extensions/clipboard" component={clipboard} />
           <AppRoute path="/extensions/context-menu" component={menu} />
           <AppRoute path="/extensions/swiper" component={swiper} />
-          <AppRoute path="/extensions/access-control" component={accessControl}/>
-          
+          <AppRoute
+            path="/extensions/access-control"
+            component={accessControl}
+          />
           <AppRoute path="/extensions/i18n" component={i18n} />
           <AppRoute path="/extensions/tree" component={tree} />
-         
-          
           <AppRoute path="/extensions/pagination" component={reactPaginate} />
           <AppRoute component={error404} fullLayout />
         </Switch>

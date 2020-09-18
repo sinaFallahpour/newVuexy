@@ -18,9 +18,11 @@ class Formik extends React.Component {
           <Col lg="6" md="12">
             <FormikBasic />
           </Col>
+
           <Col lg="6" md="12">
             <FormikErrorMsg />
           </Col>
+          
           <Col sm="12">
             <FormikValidation />
           </Col>

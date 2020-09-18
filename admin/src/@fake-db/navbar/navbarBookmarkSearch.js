@@ -823,6 +823,8 @@ mock.onGet("/api/search/bookmarks/data").reply(200, {
   searchResult
 })
 
+
+
 mock.onPost("/api/update/bookmarks").reply(request => {
   const bookmarkToUpdate = JSON.parse(request.data).obj
 

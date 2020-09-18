@@ -6,6 +6,20 @@ export const searchResult = [
     searchLimit: 4,
     data: [
       {
+        id: "categories",
+        title: "categories",
+        target: "categories",
+        link: "/categories",
+        icon:  "Circle",
+      },
+      {
+        id: "serviceTypes",
+        title: "serviceTypes",
+        target: "serviceTypes",
+        link: "/service-type",
+        icon:  "Circle",
+      },
+      {
         id: 1,
         target: "AnalyticsDashboard",
         title: "Analytics Dashboard",
@@ -515,13 +529,6 @@ export const searchResult = [
         title: "Search",
         link: "/pages/search",
         icon: "Search"
-      },
-      {
-        id: 77,
-        target: "Invoice",
-        title: "Invoice",
-        link: "/pages/invoice",
-        icon: "FileText"
       },
       {
         id: 78,

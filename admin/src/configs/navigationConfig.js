@@ -2,6 +2,34 @@ import React from "react"
 import * as Icon from "react-feather"
 const navigationConfig = [
   {
+    type: "groupHeader",
+    groupTitle: "APPS"
+  },
+  {
+    id: "category & service Management",
+    title: "Category & service Management",
+    type: "collapse",
+    icon: <Icon.Home size={20} />,
+    children: [
+      {
+        id: "categories",
+        title: "categories",
+        type: "item",
+        icon: <Icon.Circle size={12} />,
+        permissions: ["admin", "editor"],
+        navLink: "/categories"
+      },
+      {
+        id: "serviceTypes",
+        title: "serviceTypes",
+        type: "item",
+        icon: <Icon.Circle size={12} />,
+        permissions: ["admin","editor"],
+        navLink: "/service-type"
+      }
+    ]
+  },
+  {
     id: "dashboard",
     title: "Dashboard",
     type: "collapse",
