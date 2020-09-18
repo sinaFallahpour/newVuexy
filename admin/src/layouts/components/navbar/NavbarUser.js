@@ -26,7 +26,7 @@ const handleNavigation = (e, path) => {
 }
 
 const UserDropdown = props => {
-  const { logout, isAuthenticated } = useAuth0()
+  // const { logout, isAuthenticated } = useAuth0()
   return (
     <DropdownMenu right>
       <DropdownItem
@@ -69,27 +69,6 @@ const UserDropdown = props => {
       <DropdownItem
         tag="a"
         href="/pages/login"
-        onClick={e => {
-          e.preventDefault()
-          if (isAuthenticated) {
-            return logout({
-              returnTo: window.location.origin + process.env.REACT_APP_PUBLIC_PATH
-            })
-          } else {
-            const provider = props.loggedInWith
-            if (provider !== null) {
-              if (provider === "jwt") {
-                return props.logoutWithJWT()
-              }
-              if (provider === "firebase") {
-                return props.logoutWithFirebase()
-              }
-            } else {
-              history.push("/pages/login")
-            }
-          }
-
-        }}
       >
         <Icon.Power size={14} className="mr-50" />
         <span className="align-middle">Log Out</span>

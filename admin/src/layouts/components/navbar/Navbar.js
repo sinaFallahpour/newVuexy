@@ -2,35 +2,35 @@ import React from "react"
 import { Navbar } from "reactstrap"
 import { connect } from "react-redux"
 import classnames from "classnames"
-import { useAuth0 } from "../../../authServices/auth0/auth0Service"
-import {
-  logoutWithJWT,
-  logoutWithFirebase
-} from "../../../redux/actions/auth/loginActions"
+// import { useAuth0 } from "../../../authServices/auth0/auth0Service"
+// import {
+//   logoutWithJWT,
+//   logoutWithFirebase
+// } from "../../../redux/actions/auth/loginActions"
 import NavbarBookmarks from "./NavbarBookmarks"
 import NavbarUser from "./NavbarUser"
 import userImg from "../../../assets/img/portrait/small/avatar-s-11.jpg"
 
-const UserName = props => {
-  let username = ""
-  if (props.userdata !== undefined) {
-    username = props.userdata.name
-  } else if (props.user.login.values !== undefined) {
-    username = props.user.login.values.name
-    if (
-      props.user.login.values.loggedInWith !== undefined &&
-      props.user.login.values.loggedInWith === "jwt"
-    ) {
-      username = props.user.login.values.loggedInUser.name
-    }
-  } else {
-    username = "John Doe"
-  }
+// const UserName = props => {
+//   let username = ""
+//   if (props.userdata !== undefined) {
+//     username = props.userdata.name
+//   } else if (props.user.login.values !== undefined) {
+//     username = props.user.login.values.name
+//     if (
+//       props.user.login.values.loggedInWith !== undefined &&
+//       props.user.login.values.loggedInWith === "jwt"
+//     ) {
+//       username = props.user.login.values.loggedInUser.name
+//     }
+//   } else {
+//     username = "John Doe"
+//   }
 
-  return username
-}
+//   return username
+// }
 const ThemeNavbar = props => {
-  const { user } = useAuth0()
+  // const { user } = useAuth0()
   const colorsArr = [ "primary", "danger", "success", "info", "warning", "dark"]
   const navbarTypes = ["floating" , "static" , "sticky" , "hidden"]
 
@@ -86,17 +86,10 @@ const ThemeNavbar = props => {
                 </div>
               ) : null}
               <NavbarUser
+              userName="sina"
                 handleAppOverlay={props.handleAppOverlay}
                 changeCurrentLang={props.changeCurrentLang}
-                userName={<UserName userdata={user} {...props} />}
-                userImg={
-                  props.user.login.values !== undefined &&
-                  props.user.login.values.loggedInWith !== "jwt" &&
-                  props.user.login.values.photoUrl
-                    ? props.user.login.values.photoUrl 
-                    : user !== undefined && user.picture ? user.picture
-                    : userImg
-                }
+                userImg={"asas.jpg"}
                 loggedInWith={
                   props.user !== undefined &&
                   props.user.login.values !== undefined
@@ -114,14 +107,16 @@ const ThemeNavbar = props => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    user: state.auth
-  }
-}
+export default   ThemeNavbar;
 
-export default connect(mapStateToProps, {
-  logoutWithJWT,
-  logoutWithFirebase,
-  useAuth0
-})(ThemeNavbar)
+// const mapStateToProps = state => {
+//   return {
+//     user: state.auth
+//   }
+// }
+
+// export default connect(mapStateToProps, {
+//   logoutWithJWT,
+//   logoutWithFirebase,
+//   useAuth0
+// })(ThemeNavbar)

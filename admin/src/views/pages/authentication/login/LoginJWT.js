@@ -1,23 +1,25 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { CardBody, FormGroup, Form, Input, Button, Label } from "reactstrap"
-import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy"
-import { Mail, Lock, Check } from "react-feather"
-import { loginWithJWT } from "../../../../redux/actions/auth/loginActions"
-import { connect } from "react-redux"
-import { history } from "../../../../history"
+import React from "react";
+import { Link } from "react-router-dom";
+import { CardBody, FormGroup, Form, Input, Button, Label } from "reactstrap";
+import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy";
+import { Mail, Lock, Check } from "react-feather";
+// import { loginWithJWT } from "../../../../redux/actions/auth/loginActions";
+// import { connect } from "react-redux";
+import { history } from "../../../../history";
 
 class LoginJWT extends React.Component {
   state = {
     email: "demo@demo.com",
     password: "demodemo",
-    remember: false
-  }
+    remember: false,
+  };
 
-  handleLogin = e => {
-    e.preventDefault()
-    this.props.loginWithJWT(this.state)
-  }
+  handleLogin = (e) => {
+    e.preventDefault();
+    //login logic
+
+    alert("login")
+  };
   render() {
     return (
       <React.Fragment>
@@ -28,7 +30,7 @@ class LoginJWT extends React.Component {
                 type="email"
                 placeholder="Email"
                 value={this.state.email}
-                onChange={e => this.setState({ email: e.target.value })}
+                onChange={(e) => this.setState({ email: e.target.value })}
                 required
               />
               <div className="form-control-position">
@@ -41,7 +43,7 @@ class LoginJWT extends React.Component {
                 type="password"
                 placeholder="Password"
                 value={this.state.password}
-                onChange={e => this.setState({ password: e.target.value })}
+                onChange={(e) => this.setState({ password: e.target.value })}
                 required
               />
               <div className="form-control-position">
@@ -66,7 +68,7 @@ class LoginJWT extends React.Component {
                 color="primary"
                 outline
                 onClick={() => {
-                  history.push("/pages/register")
+                  history.push("/pages/register");
                 }}
               >
                 Register
@@ -78,12 +80,15 @@ class LoginJWT extends React.Component {
           </Form>
         </CardBody>
       </React.Fragment>
-    )
+    );
   }
 }
-const mapStateToProps = state => {
-  return {
-    values: state.auth.login
-  }
-}
-export default connect(mapStateToProps, { loginWithJWT })(LoginJWT)
+
+export default LoginJWT;
+
+// const mapStateToProps = state => {
+//   return {
+//     values: state.auth.login
+//   }
+// }
+// export default connect(mapStateToProps, { loginWithJWT })(LoginJWT)

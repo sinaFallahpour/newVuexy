@@ -13,8 +13,8 @@ import {
   TabPane
 } from "reactstrap"
 import classnames from "classnames"
-import RegisterFirebase from "./RegisterFirebase"
-import RegisterAuth0 from "./RegisterAuth0"
+// import RegisterFirebase from "./RegisterFirebase"
+// import RegisterAuth0 from "./RegisterAuth0"
 import RegisterJWT from "./RegisterJWT"
 import registerImg from "../../../../assets/img/pages/register.jpg"
 import "../../../../assets/scss/pages/authentication.scss"
@@ -99,13 +99,16 @@ class Register extends React.Component {
                   <CardBody className="pt-1 pb-50">
                     <TabContent activeTab={this.state.activeTab}>
                       <TabPane tabId="1">
+                    
                         <RegisterJWT />
                       </TabPane>
                       <TabPane tabId="2">
-                        <RegisterFirebase />
+                     register with firebase
+                        {/* <RegisterFirebase /> */}
                       </TabPane>
                       <TabPane tabId="3">
-                        <RegisterAuth0 />
+                      register with RegisterAuth0
+                        {/* <RegisterAuth0 /> */}
                       </TabPane>
                     </TabContent>
                   </CardBody>
