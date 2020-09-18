@@ -188,7 +188,6 @@ const register = lazy(() =>
   import("./views/pages/authentication/register/Register")
 );
 
-
 // Set Layout and Component Using App Route
 const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
   <Route
@@ -216,6 +215,7 @@ const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
     }}
   />
 );
+
 const mapStateToProps = (state) => {
   return {
     user: state.auth.login.userRole,
@@ -386,8 +386,6 @@ class AppRouter extends React.Component {
           <AppRoute path="/extensions/clipboard" component={clipboard} />
           <AppRoute path="/extensions/context-menu" component={menu} />
           <AppRoute path="/extensions/swiper" component={swiper} />
-        
-        
           <AppRoute path="/extensions/i18n" component={i18n} />
           <AppRoute path="/extensions/tree" component={tree} />
           <AppRoute path="/extensions/pagination" component={reactPaginate} />

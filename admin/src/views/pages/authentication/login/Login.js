@@ -59,40 +59,6 @@ class Login extends React.Component {
                   </p>
                   <Nav tabs className="px-2">
                     <NavItem>
-                      <NavLink
-                        className={classnames({
-                          active: this.state.activeTab === "1"
-                        })}
-                        onClick={() => {
-                          this.toggle("1")
-                        }}
-                      >
-                        JWT
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={classnames({
-                          active: this.state.activeTab === "2"
-                        })}
-                        onClick={() => {
-                          this.toggle("2")
-                        }}
-                      >
-                        Firebase
-                      </NavLink>
-                    </NavItem>
-                    <NavItem>
-                      <NavLink
-                        className={classnames({
-                          active: this.state.activeTab === "3"
-                        })}
-                        onClick={() => {
-                          this.toggle("3")
-                        }}
-                      >
-                        Auth0
-                      </NavLink>
                     </NavItem>
                   </Nav>
                   <TabContent activeTab={this.state.activeTab}>

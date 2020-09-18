@@ -182,147 +182,16 @@ class NavbarBookmarks extends React.PureComponent {
               </NavLink>
             </NavItem>
           ) : null}
-          <NavItem
-            className="nav-item d-none d-lg-block"
-            onClick={this.handleBookmarksVisibility}
-          >
-            <NavLink>
-              <Icon.Star className="text-warning" size={21} />
-            </NavLink>
-            <div
-              className={classnames("bookmark-input search-input", {
-                show: this.state.showBookmarks
-              })}
-            >
-              <div className="bookmark-input-icon">
-                <Icon.Search size={15} className="primary" />
-              </div>
 
-              <AutoComplete
-                suggestions={suggestions}
-                className="form-control"
-                filterKey="title"
-                autoFocus={true}
-                suggestionLimit={this.state.value.length ? 6 : 100}
-                clearInput={this.state.showBookmarks}
-                defaultSuggestions={true}
-                onChange={e => this.setState({ value: e.target.value })}
-                externalClick={e => this.setState({ showBookmarks: false })}
-                onKeyDown={e => {
-                  if (e.keyCode === 27 || e.keyCode === 13) {
-                    this.setState({
-                      showBookmarks: false
-                    })
-                    handleAppOverlay("")
-                  }
-                }}
-                customRender={(
-                  suggestion,
-                  i,
-                  filteredData,
-                  activeSuggestion,
-                  onSuggestionItemClick,
-                  onSuggestionItemHover,
-                  userInput
-                ) => {
-                  const IconTag = Icon[suggestion.icon ? suggestion.icon : "X"]
-                  if (userInput.length) {
-                    return (
-                      <li
-                        className={classnames(
-                          "suggestion-item d-flex justify-content-between",
-                          {
-                            active:
-                              filteredData.indexOf(suggestion) ===
-                              activeSuggestion
-                          }
-                        )}
-                        key={suggestion.target}
-                        onClick={e => {
-                          if (!this.state.showBookmarks) {
-                            e.stopPropagation()
-                          }
-                        }}
-                      >
-                        <Link
-                          to={suggestion.link}
-                          className="component-info w-100"
-                          onClick={() =>
-                            this.setState({ showBookmarks: false })
-                          }
-                        >
-                          <IconTag size={15} />
-                          <span className="align-middle ml-1">
-                            {suggestion.title}
-                          </span>
-                        </Link>
-                        <Icon.Star
-                          className={classnames({
-                            "text-warning": suggestion.starred === true
-                          })}
-                          size={17}
-                          onClick={e => {
-                            updateStarred(suggestion)
-                            e.stopPropagation()
-                          }}
-                        />
-                      </li>
-                    )
-                  } else {
-                    return suggestion.starred === true ? (
-                      <li
-                        key={suggestion.target}
-                        className={classnames(
-                          "suggestion-item d-flex justify-content-between",
-                          {
-                            active:
-                              filteredData.indexOf(suggestion) ===
-                              activeSuggestion
-                          }
-                        )}
-                        onClick={e => {
-                          if (!this.state.showBookmarks) {
-                            e.stopPropagation()
-                          }
-                        }}
-                      >
-                        <Link
-                          to={suggestion.link}
-                          className="component-info w-100"
-                          onClick={e => this.setState({ showBookmarks: false })}
-                        >
-                          <IconTag size={15} />
-                          <span className="align-middle ml-1">
-                            {suggestion.title}
-                          </span>
-                        </Link>
-                        <Icon.Star
-                          className={classnames({
-                            "text-warning": suggestion.starred === true
-                          })}
-                          size={17}
-                          onClick={e => {
-                            updateStarred(suggestion)
-                            e.stopPropagation()
-                          }}
-                        />
-                      </li>
-                    ) : null
-                  }
-                }}
-                onSuggestionsShown={userInput => {
-                  if (this.state.showBookmarks) {
-                    handleAppOverlay(userInput)
-                  }
-                }}
-              />
-            </div>
-          </NavItem>
-        </ul>
+
+
+           </ul>
       </div>
     )
   }
 }
+
+
 const mapStateToProps = state => {
   return {
     bookmarks: state.navbar
