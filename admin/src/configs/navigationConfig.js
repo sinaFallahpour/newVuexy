@@ -926,14 +926,6 @@ const navigationConfig = [
     navLink: "/extensions/swiper"
   },
   {
-    id: "access-control",
-    title: "Access Control",
-    icon: <Icon.Lock size={20} />,
-    type: "item",
-    permissions: ["admin", "editor"],
-    navLink: "/extensions/access-control"
-  },
-  {
     id: "i18n",
     title: "I18n",
     icon: <Icon.Globe size={20} />,

@@ -745,14 +745,7 @@ export const searchResult = [
     icon: "Map",
     starred: false
   },
-  {
-    id: 97,
-    target: "accessControl",
-    title: "Access Control",
-    link: "/extensions/access-control",
-    icon: "Lock",
-    starred: false
-  },
+ 
   {
     id: 98,
     target: "tree",

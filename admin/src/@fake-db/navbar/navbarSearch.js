@@ -6,14 +6,14 @@ export const searchResult = [
     searchLimit: 4,
     data: [
       {
-        id: "categories",
+        id: 108,
         title: "categories",
         target: "categories",
         link: "/categories",
         icon:  "Circle",
       },
       {
-        id: "serviceTypes",
+        id: 109,
         title: "serviceTypes",
         target: "serviceTypes",
         link: "/service-type",
@@ -663,13 +663,8 @@ export const searchResult = [
         link: "/extensions/swiper",
         icon: "Map"
       },
-      {
-        id: 97,
-        target: "accessControl",
-        title: "Access Control",
-        link: "/extensions/access-control",
-        icon: "Lock"
-      },
+    
+      
       {
         id: 98,
         target: "tree",

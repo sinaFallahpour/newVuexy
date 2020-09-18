@@ -187,9 +187,8 @@ const resetPassword = lazy(() =>
 const register = lazy(() =>
   import("./views/pages/authentication/register/Register")
 );
-const accessControl = lazy(() =>
-  import("./extensions/access-control/AccessControl")
-);
+
+
 // Set Layout and Component Using App Route
 const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
   <Route
@@ -387,10 +386,8 @@ class AppRouter extends React.Component {
           <AppRoute path="/extensions/clipboard" component={clipboard} />
           <AppRoute path="/extensions/context-menu" component={menu} />
           <AppRoute path="/extensions/swiper" component={swiper} />
-          <AppRoute
-            path="/extensions/access-control"
-            component={accessControl}
-          />
+        
+        
           <AppRoute path="/extensions/i18n" component={i18n} />
           <AppRoute path="/extensions/tree" component={tree} />
           <AppRoute path="/extensions/pagination" component={reactPaginate} />

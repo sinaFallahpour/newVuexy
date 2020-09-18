@@ -2,8 +2,8 @@ import React from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy";
 import { Check } from "react-feather";
-import { connect } from "react-redux";
-import { signupWithJWT } from "../../../../redux/actions/auth/registerActions";
+// import { connect } from "react-redux";
+// import { signupWithJWT } from "../../../../redux/actions/auth/registerActions";
 import { history } from "../../../../history";
 
 class RegisterJWT extends React.Component {

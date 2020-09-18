@@ -89,7 +89,7 @@ const ThemeNavbar = props => {
               userName="sina"
                 handleAppOverlay={props.handleAppOverlay}
                 changeCurrentLang={props.changeCurrentLang}
-                userImg={"asas.jpg"}
+                userImg={require("../../../assets/img/profile/post-media/25.jpg")} 
                 loggedInWith={
                   props.user !== undefined &&
                   props.user.login.values !== undefined

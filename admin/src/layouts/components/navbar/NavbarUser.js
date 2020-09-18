@@ -16,7 +16,7 @@ import * as Icon from "react-feather"
 import classnames from "classnames"
 import ReactCountryFlag from "react-country-flag"
 import Autocomplete from "../../../components/@vuexy/autoComplete/AutoCompleteComponent"
-import { useAuth0 } from "../../../authServices/auth0/auth0Service"
+// import { useAuth0 } from "../../../authServices/auth0/auth0Service"
 import { history } from "../../../history"
 import { IntlContext } from "../../../utility/context/Internationalization"
 
